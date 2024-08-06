@@ -14,7 +14,6 @@ public class Transactions {
     private String transactionType;
     private Date transactionDate;
 
-    
     public Transactions() {
         //
     }

@@ -30,6 +30,22 @@ public class TransactionServiceImplJpa implements TransactionService {
     public List<Transactions> getAllTransactions() {
         return transactionRepository.findAll();
     }
+//lll
+    public TransactionRepository getTransactionRepository() {
+        return transactionRepository;
+    }
+
+    public void setTransactionRepository(TransactionRepository transactionRepository) {
+        this.transactionRepository = transactionRepository;
+    }
+
+    public AccountRepository getAccountRepository() {
+        return accountRepository;
+    }
+
+    public void setAccountRepository(AccountRepository accountRepository) {
+        this.accountRepository = accountRepository;
+    }
 
     @Override
     public Transactions getTransactionById(int transactionId) {
@@ -46,7 +62,7 @@ public class TransactionServiceImplJpa implements TransactionService {
         if (balance < transaction.getAmount() && transaction.getTransactionType().equalsIgnoreCase("debit")) {
             throw new OutOfBalanceException("Transaction amount exceeds the total balance available in the account.");
         }
-        if (transaction.getTransactionType().equalsIgnoreCase("credit")) {
+        if (transaction.getTransactionType().equals("1")) {
             balance = balance + transaction.getAmount();
         }
         else {

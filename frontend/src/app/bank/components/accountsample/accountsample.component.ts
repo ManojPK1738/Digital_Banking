@@ -8,8 +8,6 @@ import { AccountTS } from '../../types/tstypes/Accountts';
   templateUrl: './accountsample.component.html',
   styleUrls: ['./accountsample.component.css']
 })
-
 export class AccountsampleComponent {
-  account:any = new AccountTS("1",50,"4");
-
+   account:AccountTS=new AccountTS("1",500.00,"1");
 }
